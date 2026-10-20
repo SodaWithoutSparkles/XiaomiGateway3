@@ -5302,6 +5302,8 @@ DEVICES += [{
 }, {
     # https://home.miot-spec.com/spec/xiaomi.switch.w2
     21607: ["Xiaomi", "Xiaomi Smart Wall Switch (2 Gang)", "XMS01BXS", "xiaomi.switch.w2"],
+    # Dark version
+    28245: ["Xiaomi", "Xiaomi Smart Wall Switch (2 Gang)", "XMS01BXS", "xiaomi.switch.w2b"],
     "spec": [
         BaseConv("action", "sensor"),
         ConstConv("action", mi="4.e.1", value=BUTTON_1_SINGLE),
