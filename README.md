@@ -131,6 +131,24 @@ You can change the operation of an existing device or add support for any **Xiao
 
 It is welcomed if you return a working converter to integration. You can create an issue or make a pull request.
 
+#### Generate a device spec
+
+For **MIoT** devices (BLE, Mesh, Zigbee with miot spec) you can generate a draft
+of the device spec from the [miot spec](https://home.miot-spec.com/):
+
+```bash
+python3 generate_device.py https://home.miot-spec.com/spec/xiaomi.switch.2wpro2
+python3 generate_device.py xiaomi.switch.2wpro2
+python3 generate_device.py "references/小米智能开关Pro（双开）(...).htm" --offline
+```
+
+The script prints a block for `custom_components/xiaomi_gateway3/core/devices.py`
+and reports the product id, the section (BLE or Mesh) and the properties that
+need a manual decision. Market brand, market name and hardware model are not
+part of the miot spec - pass them with `--brand`, `--name` and `--market-model`.
+
+The result is always a **draft**: check it against a real device before using it.
+
 ## Installation
 
 [HACS](https://hacs.xyz/) > Integrations > Plus > **XiaomiGateway3** > Install
